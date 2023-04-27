@@ -2,7 +2,7 @@ public with sharing class ContactAndLeadSearch {
     // public static method to search for contacts and leads, accepts a string as a parameter
     // matches string as part of either the first or last name
     // returns List of SObjects
-    public static List<SObject> search(String searchStr) {
+    public static List<SObject> searchContactsAndLeads(String searchStr) {
         // create a list of SObjects to return
         List<SObject> results = new List<SObject>();
         // create a list of Contact records that match the search string
