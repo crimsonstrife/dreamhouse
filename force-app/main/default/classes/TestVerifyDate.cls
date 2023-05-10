@@ -1,6 +1,7 @@
-@IsTest
+@isTest
 private class TestVerifyDate {
-    // Test method for VerifyDate class
-    static testMethod void testVerifyDate() {
+    static testMethod void TestVerifyDate() {
+      VerifyDate.CheckDates(System.today(),System.today().addDays(10));
+       VerifyDate.CheckDates(System.today(),System.today().addDays(78));
     }
 }
