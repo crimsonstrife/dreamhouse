@@ -11,10 +11,11 @@ public with sharing class ContactController {
     // get a list of contacts and get the names and emails
     @AuraEnabled(cacheable=true)
     public static List<Contact> getContacts() {
-        return [
-            SELECT FirstName, LastName, Email
-            FROM Contact
-            WITH SECURITY_ENFORCED
-        ];
+        // return a list of contacts with error handling
+        try {
+            return [SELECT FirstName, LastName, Email FROM Contact WITH SECURITY_ENFORCED];
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
     }
 }
